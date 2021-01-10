@@ -2,12 +2,23 @@
 GET  http://localhost:8000/auth/
 
 ###
+GET  http://localhost:8000/auth/5ff9df0e4224a60557d7c375
+
+###
 POST http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
-    "name": "nwosu nonso",
-    "email": "louisnwosu94@gmail.com",
-    "password": "ilovewanking"
+    "name": "nonso nwosu",
+    "email": "louisn4wosu9@gmail.com",
+    "password": "ilovecoding"
 }
- 
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+   "email": "louisn4wosu9@gmail.com",
+    "password": "ilovecoding"
+}
