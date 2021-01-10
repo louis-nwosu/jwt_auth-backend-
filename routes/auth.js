@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 //import environment variables
 const dotenv = require("dotenv");
@@ -63,7 +63,7 @@ Auth.post("/register", async (req, res) => {
 
 //login
 Auth.post("/login", async (req, res) => {
-  //Validate data 
+  //Validate data
   const { error } = loginValidation(req.body);
   if (error) {
     return res.status(400).send(error.details[0].message);
@@ -79,9 +79,10 @@ Auth.post("/login", async (req, res) => {
     return res.status(400).send("password is incorrect");
   }
   //create and assign a token
-  const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
   //send back data if everything is okay!
-  res.header('auth-token', token).status(200).json(user);
+  res.header("auth-token", token).status(200).json(user);
 });
+
 
 module.exports = Auth;

@@ -22,3 +22,6 @@ Content-Type: application/json
    "email": "louisn4wosu9@gmail.com",
     "password": "ilovecoding"
 }
+
+###
+GET http://localhost:8000/protected/protected

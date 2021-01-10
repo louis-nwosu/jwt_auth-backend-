@@ -5,7 +5,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+//local imports
 const AuthRouter = require("./routes/auth");
+const protected = require('./routes/pro');
 
 const app = express();
 
@@ -29,5 +31,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
 app.use("/auth", AuthRouter);
+app.use('/protected', protected);
 
 app.listen(8000, () => console.log("server is running on port 8000"));
